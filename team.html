@@ -22,11 +22,40 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+
+    <style>
+      #nav {
+  background: linear-gradient(270deg, #de43de, #0ee639, #e18b0c);
+  background-size: 600% 600%;
+  animation: bgFlow 10s ease infinite;
+}
+
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+      #nav ul li a {
+  position: relative;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#nav ul li a:hover {
+  color: #00cbe6;
+  text-shadow: 0 0 5px #01ebeb, 0 0 10px #00fff7;
+}
+
+
+
+
+    </style>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
-      <div id="intro">
+      <!-- <div id="intro">
         <h1>
           Welcome to our<br />
           LAB
@@ -44,14 +73,14 @@
             >
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- Header -->
       <header id="header">
-        <a href="index.html" class="logo">K2S2 GROUP</a>
       </header>
 
       <nav id="nav">
         <ul class="links">
+          <li><img src="images/logo3.png" alt="" style="width: 100px; height: 70px;"></li>
           <li><a href="index.html">Dr. Kundan K. Singh</a></li>
           <li class="active"><a href="team.html">Team</a></li>
           <li><a href="research.html">Research</a></li>
@@ -127,22 +156,22 @@
       </nav> -->
 
       <!-- Main -->
-      <div id="main">
+      <div id="main" >
         <!-- Featured Post -->
-        <article class="post featured">
+        <article class="post featured" style="padding-top: 1px;">
           <header class="major">
             <span class="date"></span>
             <h2>
               <a href="#">Our Team</a>
             </h2>
-            <p>
+            <p >
               Meet the dedicated individuals behind our research in nanoclusters
               and catalysis. Each member brings unique expertise and passion to
               our mission of advancing scientific knowledge and innovation.
             </p>
           </header>
           <a href="#" class="image main"
-            ><img src="images/GroupTeam copy.jpg" alt=""
+            ><img src="images/GroupTeam copy.jpg" alt="" 
           /></a>
           <p>
             Our team is a dynamic and diverse group of individuals, each
@@ -158,149 +187,149 @@
             <header>
               <span class="date"></span>
               <h2>
-                <a href="#">Pavan Bhaiya</a>
+                <a href="#" style="margin-left: -150px;">Pavan Bavanavar</a>
               </h2>
             </header>
             <a href="#" class="image fit"
-              ><img src="images/pavan.jpg" alt=""
+              ><img src="images/pavan.jpg" alt="" style="border-radius: 50%; height: 50vh; width: 50vh;"
             /></a>
-            <p>
-              Pavan<br />
-              IIT Dharwad<br />
+            <p >
               Phd. Scholor <br />
-              CY24DP008
+              <strong>Email: </strong> cy24dp008@iitdh.ac.in <br>
+              <strong> Enrollment at IIT Dharwad:</strong> January, 2025 <br>
+              <strong> B.Sc. (2021) and M.Sc. (2023) :</strong> Karnataka University, Dharwad <br>
+              <strong> Research Interest :</strong> Synthesis of metal nanoclusters and their catalytic applications
             </p>
           </article>
           <article>
             <header>
               <span class="date"></span>
               <h2>
-                <a href="#">B. M. Tripathi</a>
+                <a href="#"style="margin-left: -150px;">B. M. Tripathi</a>
               </h2>
             </header>
             <a href="#" class="image fit"
-              ><img src="images/bmt.jpg" alt=""
+              ><img src="images/bmt.jpg" alt="" style="border-radius: 50%; height: 50vh; width: 50vh;"
             /></a>
             <p>
-              Bholendra Mani Tripathi<br />
               IIT Dharwad<br />
               BSMS Chemistry Major <br />
-              IS22BM008
+              <strong>Email: </strong> 225100008@iitdh.ac.in
             </p>
           </article>
           <article>
             <header>
               <span class="date"></span>
               <h2>
-                <a href="#">Deepak</a>
+                <a href="#"style="margin-left: -150px;">Deepak Kumar</a>
               </h2>
             </header>
             <a href="#" class="image fit"
-              ><img src="images/deepak.jpg" alt=""
+              ><img src="images/deepak.jpg" alt="" style="border-radius: 50%; height: 50vh; width: 50vh;"
             /></a>
             <p>
-              Deepak Kumar<br />
               Chemistry Department <br />
               Project Associate <br />
+              <strong>M.Sc Chemistry: </strong>Annamalai University, Tamil Nadu <br>
+              <strong>Research Interest: </strong>  Nanocluster, 2D materials, Carbon naomaterials (Nanotechnology)
             </p>
           </article>
           <article>
             <header>
               <span class="date"></span>
               <h2>
-                <a href="#">Piyush More</a>
+                <a href="#"style="margin-left: -150px;">Piyush More</a>
               </h2>
             </header>
             <a href="#" class="image fit"
-              ><img src="images/more.jpg" alt=""
+              ><img src="images/more.jpg" alt=""  style="border-radius: 50%; height: 50vh; width: 50vh;"
             /></a>
             <p>
-              Piyush More<br />
               IIT Dharwad<br />
               BSMS Chemistry Major <br />
-              IS22BM028
+              <strong>Email: </strong> 225100028@iitdh.ac.in
             </p>
           </article>
         </section>
 
         <!-- Footer -->
-        <footer id="footer">
-          <section>
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" />
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" id="email" />
-                </div>
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" rows="3"></textarea>
-                </div>
+        <footer id="footer" style="background-color: white;" >
+        <!-- <section>
+          <form method="post" action="#">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
               </div>
-              <ul class="actions">
-                <li><input type="submit" value="Send Message" /></li>
-              </ul>
-            </form>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            <ul class="actions">
+              <li><input type="submit" value="Send Message" /></li>
+            </ul>
+          </form>
+        </section> -->
+        <section class="split contact" style="background-color: white;" >
+          <section class="alt" style="background-color: white;">
+            <h3>Office</h3>
+            <p>
+              Room 231 (second floor), Academic Block- II (Science), IIT Dharwad
+              (Permanent campus), Chikkamalligawad, Dharwad, Karnataka, India -
+              580011
+            </p>
           </section>
-          <section class="split contact">
-            <section class="alt">
-              <h3>Office</h3>
-              <p>
-                Room 231 (second floor), Academic Block- II (Science), IIT Dharwad
-                (Permanent campus), Chikkamalligawad, Dharwad, Karnataka, India -
-                580011
-              </p>
-            </section>
-            <section>
-              <h3>Phone</h3>
-              <p><a href="#">+91-8073023784 </a></p>
-            </section>
-            <section>
-              <h3>Email</h3>
-              <p><a href="mailto:kksingh@iitdh.ac.in">kksingh@iitdh.ac.in</a></p>
-            </section>
-            <section>
-              <h3>Social</h3>
-              <ul class="icons alt">
-                <li>
-                  <a
-                    href="https://x.com/kundankuks/"
-                    class="icon brands alt fa-twitter"
-                    ><span class="label">Twitter</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="icon brands fab fa-linkedin"
-                    ><span class="label"></span
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" class="icon brands alt fa-instagram"
-                    ><span class="label">Instagram</span></a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="mailto:kksingh@iitdh.ac.in"
-                    class="icon solid fa-envelope"
-                    ><span class="label">Email</span></a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://scholar.google.com/citations?hl=en&user=lG-zpYwAAAAJ&view_op=list_works&gmla=ABOlHixQbGX69ZNsl9b9dpiDCzKy7X-8XvgsUpexNEaxhz8gj3SjQd5EKBkPeaoszz6qupM7i1l2UrLrhjvMTxL9"
-                    class="icon solid fa-graduation-cap"
-                    ><span class="label">Email</span></a
-                  >
-                </li>
-              </ul>
-            </section>
+          <section>
+            <h3>Phone</h3>
+            <p><a href="#">+91-8073023784 </a></p>
           </section>
-        </footer>
+          <section>
+            <h3>Email</h3>
+            <p><a href="mailto:kksingh@iitdh.ac.in">kksingh@iitdh.ac.in</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://x.com/kundankuks/"
+                  class="icon brands alt fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fab fa-linkedin"
+                  ><span class="label"></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" class="icon brands alt fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:kksingh@iitdh.ac.in"
+                  class="icon solid fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=lG-zpYwAAAAJ&view_op=list_works&gmla=ABOlHixQbGX69ZNsl9b9dpiDCzKy7X-8XvgsUpexNEaxhz8gj3SjQd5EKBkPeaoszz6qupM7i1l2UrLrhjvMTxL9"
+                  class="icon solid fa-graduation-cap"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
 
       <!-- Copyright -->
       <div id="copyright">

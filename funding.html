@@ -7,11 +7,11 @@
 <html>
   <head>
     <!-- Favicon setup -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Nanocluster lab</title>
     <meta charset="utf-8" />
     <meta
@@ -22,11 +22,42 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
+
+    <style>
+      #nav {
+        background: linear-gradient(270deg, #de43de, #0ee639, #e18b0c);
+        background-size: 600% 600%;
+        animation: bgFlow 10s ease infinite;
+      }
+
+      @keyframes bgFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      #nav ul li a {
+        position: relative;
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      #nav ul li a:hover {
+        color: #00cbe6;
+        text-shadow: 0 0 5px #01ebeb, 0 0 10px #00fff7;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
-    <div id="wrapper" >
-      <div id="intro">
+    <div id="wrapper">
+      <!-- <div id="intro">
         <h1>
           Welcome to our<br />
           LAB
@@ -44,15 +75,20 @@
             >
           </li>
         </ul>
-      </div>
+      </div> -->
       <!-- Header -->
-      <header id="header">
-        <a href="index.html" class="logo">K2S2 GROUP</a>
-      </header>
+      <header id="header"></header>
 
       <nav id="nav">
         <ul class="links">
-          <li ><a href="index.html">Dr. Kundan K. Singh</a></li>
+          <li>
+            <img
+              src="images/logo3.png"
+              alt=""
+              style="width: 100px; height: 70px"
+            />
+          </li>
+          <li><a href="index.html">Dr. Kundan K. Singh</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publication.html">Publication</a></li>
@@ -134,16 +170,14 @@
           <article>
             <header>
               <span class="date"></span>
-              <h2 style="padding-left: 10px;">
+              <h2 style="padding-left: 10px">
                 <a href="#">Institute SEED Grant (2024-2026)</a>
               </h2>
             </header>
             <a href="#" class="image fit"
               ><img src="images/funding1.png" alt=""
             /></a>
-            <p>
-              
-            </p>
+            <p></p>
           </article>
           <article>
             <header>
@@ -155,17 +189,15 @@
             <a href="#" class="image fit"
               ><img src="images/funding2.jpg" alt=""
             /></a>
-            <p>
-              
-            </p>
+            <p></p>
           </article>
-        </section><!-- Post -->
-        
+        </section>
+        <!-- Post -->
       </div>
 
       <!-- Footer -->
       <footer id="footer">
-        <section>
+        <!-- <section>
           <form method="post" action="#">
             <div class="fields">
               <div class="field">
@@ -185,7 +217,7 @@
               <li><input type="submit" value="Send Message" /></li>
             </ul>
           </form>
-        </section>
+        </section> -->
         <section class="split contact">
           <section class="alt">
             <h3>Office</h3>
@@ -246,12 +278,21 @@
       <div id="copyright">
         <ul>
           <li>&copy; Be the best!</li>
-          <li>Designed by: <a ><strong>B.M.Tripathi</strong></a></li>
-          <li><strong><a
-            href="https://www.instagram.com/bm_tripathi_?igsh=ZDFxem1xMDhpdGZn"
-            class="icon brands fa-instagram"
-            >  For more info. contact me on my Instagram<span class="label">Instagram</span></a
-          ></strong></li>
+          <li>
+            Designed by: <a><strong>B.M.Tripathi</strong></a>
+          </li>
+          <li>
+            <strong
+              ><a
+                href="https://www.instagram.com/bm_tripathi_?igsh=ZDFxem1xMDhpdGZn"
+                class="icon brands fa-instagram"
+              >
+                For more info. contact me on my Instagram<span class="label"
+                  >Instagram</span
+                ></a
+              ></strong
+            >
+          </li>
         </ul>
       </div>
     </div>

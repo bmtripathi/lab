@@ -2742,8 +2742,6 @@ input[type="radio"]:focus + label:before {
   border-radius: 50px;
 }
 
-
-
 .image.main:first-child {
   margin-top: 0;
 }
@@ -3349,7 +3347,7 @@ table.alt tbody tr td {
   background-color: #212931;
   background-image: url("../../images/overlay.png"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("../../images/1d30b5a0c298c02edaf2f501b22a6587.gif");
+    url("../../images/ezgif-38e52035763bcc-ezgif.com-video-to-gif-converter.gif");
   background-size: auto, auto, 100% auto;
   background-position: center, center, top center;
   background-repeat: repeat, no-repeat, no-repeat;
@@ -3398,7 +3396,7 @@ body.is-preload #wrapper.fade-in:before {
 
 #intro {
   color: #ffffff;
-  padding: 8rem 4rem 6rem 4rem;
+  padding: 2rem 0rem 6rem 4rem;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -3414,7 +3412,7 @@ body.is-preload #wrapper.fade-in:before {
   -moz-justify-content: -moz-flex-end;
   -webkit-justify-content: -webkit-flex-end;
   -ms-justify-content: -ms-flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   -moz-transition: opacity 1s ease, -moz-transform 1s ease;
   -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
   -ms-transition: opacity 1s ease, -ms-transform 1s ease;
@@ -3423,7 +3421,8 @@ body.is-preload #wrapper.fade-in:before {
   cursor: default;
   text-align: center;
   z-index: 1;
-  min-height: 100vh;
+  height: 100vh;
+  margin-bottom: -55vh;
 }
 
 #intro input,
@@ -3531,7 +3530,7 @@ body.is-preload #wrapper.fade-in:before {
   visibility: hidden;
 }
 
-#intro.hidden {
+#intro.hiddenx {
   pointer-events: none;
   -moz-transform: translateY(2rem);
   -webkit-transform: translateY(2rem);
@@ -3546,7 +3545,7 @@ body.is-preload #wrapper.fade-in:before {
   visibility: hidden;
 }
 
-#intro.hidden + #header .logo {
+#intro.hiddenx + #header .logo {
   -moz-transform: translateY(0);
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -3574,7 +3573,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 @media screen and (max-width: 980px) {
   #intro {
     padding: 4rem 4rem 2rem 4rem;
-    min-height: 90vh;
+    min-height: 0vh;
   }
 
   #intro p br {
@@ -3589,7 +3588,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 @media screen and (max-width: 736px) {
   #intro {
     padding: 3rem 2rem 1rem 2rem;
-    min-height: 80vh;
+    min-height: 0vh;
   }
 
   #intro h1 {
@@ -3633,7 +3632,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  height: 20rem;
   padding-bottom: 8rem;
   position: relative;
   text-align: center;
@@ -3749,7 +3747,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   padding: 0 2rem 0 0;
   position: relative;
   width: calc(100% - 4rem);
-  max-width: 72rem;
+  max-width: 80rem;
   z-index: 2;
 }
 
@@ -3893,7 +3891,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   position: relative;
   margin: 0 auto;
   width: calc(100% - 4rem);
-  max-width: 72rem;
+  max-width: 80rem;
   z-index: 2;
 }
 
@@ -3923,7 +3921,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #main > .post header.major h2 {
   font-size: 4rem;
   line-height: 1.1;
-  margin: 0 0 2rem 0;
+  margin: 0 0 0rem 0;
 }
 
 #main > .post.featured {
@@ -4082,7 +4080,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   position: relative;
   margin: 0 auto;
   width: calc(100% - 4rem);
-  max-width: 72rem;
+  max-width: 80rem;
   z-index: 2;
 }
 
@@ -4352,17 +4350,17 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #footer > section.split > section {
-  padding: 3rem 4rem 1rem 4rem;
+  padding: 0rem 4rem 0rem 4rem;
   border-top: solid 2px #e2e2e2;
 }
 
 #footer > section.split > section:first-child {
-  padding: 5rem 4rem 1rem 4rem;
+  padding: 0rem 4rem 0rem 4rem;
   border-top: 0;
 }
 
 #footer > section.split > section:last-child {
-  padding: 3rem 4rem 3rem 4rem;
+  padding: 0rem 4rem 0rem 4rem;
 }
 
 #footer > section.split.contact > section {
@@ -4374,7 +4372,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 3.15rem 4rem;
+  padding: 2rem 4rem;
 }
 
 #footer > section.split.contact > section > * {
@@ -4390,7 +4388,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -webkit-flex-grow: 0;
   -ms-flex-grow: 0;
   flex-grow: 0;
-  width: 6rem;
+  width: 4rem;
 }
 
 #footer > section.split.contact > section > :last-child {
@@ -4405,11 +4403,11 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #footer > section.split.contact > section:first-child {
-  padding: 4rem 4rem 3rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
 }
 
 #footer > section.split.contact > section:last-child {
-  padding: 3rem 4rem 4rem 4rem;
+  padding: 2rem 4rem 2rem 4rem;
 }
 
 #footer > section.split.contact > section.alt {
