@@ -5,95 +5,252 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <!-- Favicon setup -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <title>Nanocluster lab</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-    <style>
-      .waiting {
-        font-size: 24px;
-        font-weight: bold;
-        font-family: sans-serif;
+
+<head>
+  <!-- Favicon setup -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <title>Nanocluster lab</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+  <style>
+    .notice-board-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 16px;
+      position: relative;
+      background: linear-gradient(135deg, #ffffffcc, #fdfdfdee);
+      overflow: hidden;
+      border: 1px solid #ddd;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Moving background light effect */
+    .notice-board-container::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(135deg, #ffffff, #00aaff);
+
+
+      animation: shineMove 6s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes shineMove {
+      0% {
+        transform: rotate(0deg) translateX(0);
       }
 
-      .dots span {
-        animation: blink 1.5s infinite;
+      100% {
+        transform: rotate(360deg) translateX(0);
+      }
+    }
+
+    /* Content stays on top of animation */
+    .notice-board,
+    .notice-title,
+    .notice-hint {
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .notice-title {
+      text-align: center;
+      margin-bottom: 5px;
+      color: #c0392b;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .notice-hint {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .notice-board {
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      position: relative;
+    }
+
+    /* Scrollbar Style */
+    .notice-board::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .notice-board::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 10px;
+    }
+
+    .notice-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      animation: scrollUp 15s linear infinite;
+    }
+
+    .notice-board:hover .notice-list {
+      animation-play-state: paused;
+    }
+
+    .notice-list li {
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
+      background-color: #fff;
+      transition: background 0.3s ease;
+      border-left: 4px solid #e74c3c;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hover effect */
+    .notice-list li:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Highlight top notices */
+    .notice-list li:nth-child(1),
+    .notice-list li:nth-child(2) {
+      background-color: #fff3f3;
+      font-weight: 600;
+      border-left-color: #ff4d4d;
+    }
+
+    /* Scroll animation */
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(0%);
+      }
+
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .notice-board-container {
+        padding: 15px;
+        margin: 20px;
+      }
+
+      .notice-board {
+        height: 150px;
+      }
+
+      .notice-title {
+        font-size: 20px;
+      }
+
+      .notice-list li {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+    }
+
+    .waiting {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .dots span {
+      animation: blink 1.5s infinite;
+      opacity: 0;
+    }
+
+    .dots span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .dots span:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .dots span:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .dots span:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes blink {
+
+      0%,
+      20% {
         opacity: 0;
       }
 
-      .dots span:nth-child(1) {
-        animation-delay: 0s;
-      }
-      .dots span:nth-child(2) {
-        animation-delay: 0.3s;
-      }
-      .dots span:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-      .dots span:nth-child(4) {
-        animation-delay: 0.9s;
+      50% {
+        opacity: 1;
       }
 
-      @keyframes blink {
-        0%,
-        20% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    #nav {
+      background: linear-gradient(270deg, #de43de, #0ee639, #e18b0c);
+      background-size: 600% 600%;
+      animation: bgFlow 10s ease infinite;
+    }
+
+    @keyframes bgFlow {
+      0% {
+        background-position: 0% 50%;
       }
 
-      #nav {
-        background: linear-gradient(270deg, #de43de, #0ee639, #e18b0c);
-        background-size: 600% 600%;
-        animation: bgFlow 10s ease infinite;
+      50% {
+        background-position: 100% 50%;
       }
 
-      @keyframes bgFlow {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+      100% {
+        background-position: 0% 50%;
       }
+    }
 
-      #nav ul li a {
-        position: relative;
-        color: white;
-        transition: color 0.3s ease;
-      }
+    #nav ul li a {
+      position: relative;
+      color: white;
+      transition: color 0.3s ease;
+    }
 
-      #nav ul li a:hover {
-        color: #00cbe6;
-        text-shadow: 0 0 5px #01ebeb, 0 0 10px #00fff7;
-      }
-    </style>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- <div id="intro">
+    #nav ul li a:hover {
+      color: #00cbe6;
+      text-shadow: 0 0 5px #01ebeb, 0 0 10px #00fff7;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- <div id="intro">
         <h1>
           Welcome to our<br />
           LAB
@@ -112,58 +269,40 @@
           </li>
         </ul>
       </div> -->
-      <!-- Header -->
-      <header id="header"></header>
+    <!-- Header -->
+    <header id="header"></header>
 
-      <nav id="nav">
-        <ul class="links">
-          <li>
-            <img
-              src="images/logo3.png"
-              alt=""
-              style="width: 100px; height: 70px"
-            />
-          </li>
-          <li><a href="index.html">Dr. Kundan K. Singh</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publication.html">Publication</a></li>
-          <li><a href="funding.html">Funding</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="gallary.html">Gallery</a></li>
-          <li class="active"><a href="news.html">News</a></li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a href="https://x.com/?lang=en" class="icon brands fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.facebook.com/"
-              class="icon brands fa-facebook-f"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/"
-              class="icon brands fa-instagram"
-              ><span class="label">Instagram</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="mailto:bholendramani123@gmail.com"
-              class="icon solid fa-envelope"
-              ><span class="label">Mail</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+    <nav id="nav">
+      <ul class="links">
+        <li>
+          <img src="images/logo3.png" alt="" style="width: 100px; height: 70px" />
+        </li>
+        <li><a href="index.html">Dr. Kundan K. Singh</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publication.html">Publication</a></li>
+        <li><a href="funding.html">Funding</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="gallary.html">Gallery</a></li>
+        <li class="active"><a href="news.html">News</a></li>
+      </ul>
+      <ul class="icons">
+        <li>
+          <a href="https://x.com/?lang=en" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+        </li>
+        <li>
+          <a href="mailto:bholendramani123@gmail.com" class="icon solid fa-envelope"><span class="label">Mail</span></a>
+        </li>
+      </ul>
+    </nav>
 
-      <!-- Nav 
+    <!-- Nav 
       <nav id="nav">
         <ul class="links">
           <li><a href="index.html">Dr. Kundan K. Singh</a></li>
@@ -200,27 +339,45 @@
         </ul>
       </nav> -->
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Post -->
-        <section class="post">
-          <header class="major">
-            <h1>
-              News and Updates<br />
-              <hr />
-              <div class="waiting" style="color: blue">
-                Waiting<span style="color: blue" class="dots">
-                  <span>.</span><span>.</span><span>.</span><span>.</span>
-                </span>
-              </div>
-            </h1>
-          </header>
-        </section>
-      </div>
+    <!-- Main -->
+    <div id="main">
+      <!-- Post -->
+      <section class="post" style="padding-top: 20px;">
+        <header class="major">
+          <h1>
+            News and Updates<br />
+            <hr />
+            <div class="waiting" style="color: blue">
+              Stay connected for more<span style="color: blue" class="dots">
+                <span>.</span><span>.</span><span>.</span><span>.</span>
+              </span>
+            </div>
+          </h1>
+        </header>
+        <div class="notice-board-container">
+          <h2 class="notice-title">📌 Notice Board</h2>
+          <small class="notice-hint">Latest News Here.......</small>
 
-      <!-- Footer -->
-      <footer id="footer">
-        <!-- <section>
+          <div class="notice-board">
+            <ul class="notice-list">
+              <li>📢 Admissions open for PhD Chemistry - Last Date: Aug 10</li>
+              <li>🔔 Guest Lecture on Organometallics - Aug 2 at 11:00 AM</li>
+              <li>📆 Mid-semester exam dates announced</li>
+              <li>🧪 Lab safety training on Aug 5 at 3:00 PM</li>
+              <li>🎤 Departmental Seminar Series starts Sep 1</li>
+              <li>💰 Scholarship renewal deadline: Aug 15</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <!-- <section>
           <form method="post" action="#">
             <div class="fields">
               <div class="field">
@@ -241,92 +398,72 @@
             </ul>
           </form>
         </section> -->
-        <section class="split contact">
-          <section class="alt">
-            <h3>Office</h3>
-            <p>
-              Room 231 (second floor), Academic Block- II (Science), IIT Dharwad
-              (Permanent campus), Chikkamalligawad, Dharwad, Karnataka, India -
-              580011
-            </p>
-          </section>
-          <section>
-            <h3>Phone</h3>
-            <p><a href="#">+91-8073023784 </a></p>
-          </section>
-          <section>
-            <h3>Email</h3>
-            <p><a href="mailto:kksingh@iitdh.ac.in">kksingh@iitdh.ac.in</a></p>
-          </section>
-          <section>
-            <h3>Social</h3>
-            <ul class="icons alt">
-              <li>
-                <a
-                  href="https://x.com/kundankuks/"
-                  class="icon brands alt fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fab fa-linkedin"
-                  ><span class="label"></span
-                ></a>
-              </li>
-              <li>
-                <a href="#" class="icon brands alt fa-instagram"
-                  ><span class="label">Instagram</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:kksingh@iitdh.ac.in"
-                  class="icon solid fa-envelope"
-                  ><span class="label">Email</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://scholar.google.com/citations?hl=en&user=lG-zpYwAAAAJ&view_op=list_works&gmla=ABOlHixQbGX69ZNsl9b9dpiDCzKy7X-8XvgsUpexNEaxhz8gj3SjQd5EKBkPeaoszz6qupM7i1l2UrLrhjvMTxL9"
-                  class="icon solid fa-graduation-cap"
-                  ><span class="label">Email</span></a
-                >
-              </li>
-            </ul>
-          </section>
+      <section class="split contact">
+        <section class="alt">
+          <h3>Office</h3>
+          <p>
+            Room 231 (second floor), Academic Block- II (Science), IIT Dharwad
+            (Permanent campus), Chikkamalligawad, Dharwad, Karnataka, India -
+            580011
+          </p>
         </section>
-      </footer>
+        <section>
+          <h3>Phone</h3>
+          <p><a href="#">+91-8073023784 </a></p>
+        </section>
+        <section>
+          <h3>Email</h3>
+          <p><a href="mailto:kksingh@iitdh.ac.in">kksingh@iitdh.ac.in</a></p>
+        </section>
+        <section>
+          <h3>Social</h3>
+          <ul class="icons alt">
+            <li>
+              <a href="https://x.com/kundankuks/" class="icon brands alt fa-twitter"><span
+                  class="label">Twitter</span></a>
+            </li>
+            <li>
+              <a href="#" class="icon brands fab fa-linkedin"><span class="label"></span></a>
+            </li>
+            <li>
+              <a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+            </li>
+            <li>
+              <a href="mailto:kksingh@iitdh.ac.in" class="icon solid fa-envelope"><span class="label">Email</span></a>
+            </li>
+            <li>
+              <a href="https://scholar.google.com/citations?hl=en&user=lG-zpYwAAAAJ&view_op=list_works&gmla=ABOlHixQbGX69ZNsl9b9dpiDCzKy7X-8XvgsUpexNEaxhz8gj3SjQd5EKBkPeaoszz6qupM7i1l2UrLrhjvMTxL9"
+                class="icon solid fa-graduation-cap"><span class="label">Email</span></a>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </footer>
 
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; Be the best!</li>
-          <li>
-            Designed by: <a><strong>B.M.Tripathi</strong></a>
-          </li>
-          <li>
-            <strong
-              ><a
-                href="https://www.instagram.com/bm_tripathi_?igsh=ZDFxem1xMDhpdGZn"
-                class="icon brands fa-instagram"
-              >
-                For more info. contact me on my Instagram<span class="label"
-                  >Instagram</span
-                ></a
-              ></strong
-            >
-          </li>
-        </ul>
-      </div>
+    <!-- Copyright -->
+    <div id="copyright">
+      <ul>
+        <li>&copy; Be the best!</li>
+        <li>
+          Designed by: <a><strong>B.M.Tripathi</strong></a>
+        </li>
+        <li>
+          <strong><a href="https://www.instagram.com/bm_tripathi_?igsh=ZDFxem1xMDhpdGZn"
+              class="icon brands fa-instagram">
+              For more info. contact me on my Instagram<span class="label">Instagram</span></a></strong>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>
